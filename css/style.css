@@ -387,6 +387,12 @@ button::-moz-focus-inner {
 	-webkit-box-shadow:4px 4px 5px rgba(0,0,0,0.75);
 	box-shadow:4px 4px 5px rgba(0,0,0,0.75);
 }
+.catalog-b__dummy {
+	padding:0 0 17px
+}
+.catalog-b__dummy span {
+	display:block;
+}
 .catalog-b__slider--item {
 	height:200px;
 }
