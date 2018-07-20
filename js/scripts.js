@@ -80,7 +80,7 @@ $(function() {
 			}
 		]
 	});
-	$('.catalog-b .catalog-b--favorite').on('click', function() {
+	$('.catalog-b .catalog-b--favorite, .modal_fast .catalog-b--favorite').on('click', function() {
 		$(this).toggleClass('is-active');
 	});
 	function setWatchedSlider() {
@@ -184,5 +184,74 @@ $(function() {
 		} else {
 			$('.product-b [data-favorite="'+id+'"]').removeClass('is-active');
 		}
+	});
+	$('select').selectric({
+		nativeOnMobile: true
+	});
+	function openCityDrop() {
+		$('.header--shop').addClass('is-active');
+		$('.shop-drop').addClass('is-opened');
+	}
+	function closeCityDrop() {
+		$('.header--shop').removeClass('is-active');
+		$('.shop-drop').removeClass('is-opened');
+	}
+	$('.header--shop').on('click', function() {
+		var t = $(this);
+		if ( !t.hasClass('is-active') ) {
+			openCityDrop();
+		} else {
+			closeCityDrop();
+		}
+	});
+	$('.shop-drop--close').on('click', function() {
+		closeCityDrop();
+	});
+	$(document).on('click', function(e) {
+		if ( !$(e.target).closest('.header--shop').length && !$(e.target).closest('.shop-drop').length ) {
+			closeCityDrop();
+		}
+	});
+	function setHeaderFavorite() {
+		var t = $('.header--favorite');
+		var c = t.attr('data-count');
+		if ( c > 0 ) {
+			t.addClass('is-active');
+			t.find('.header--favorite_counter').text(c);
+		} else {
+			t.removeClass('is-active');
+			t.find('.header--favorite_counter').text('');
+		}
+	}
+	setHeaderFavorite();
+	$('.header--favorite').on('click', function(e) {
+		if ( $(this).attr('data-count') == 0 ) {
+			e.preventDefault();
+		}
+	});
+	$('[data-open]').on('click', function(e) {
+		e.preventDefault();
+		$(this).addClass('is-active');
+		var t = $('[data-target="'+$(this).attr('data-open')+'"]');
+		t.siblings('[data-target]').removeClass('is-opened is-active');
+		$('.fade-bg').addClass('is-opened');
+		t.addClass('is-opened');
+		var h = $(window).scrollTop()+($(window).height()-t.outerHeight())/2;
+		if ( !Modernizr.mq('(max-width:767px)') ) {
+			var diff = 30;
+		} else {
+			var diff = 15;
+		}
+		if ( h < $(window).scrollTop()+(diff*2) ) {
+			h = $(window).scrollTop()+diff;
+		}
+		t.css({
+			'top': h+'px'
+		}).addClass('is-active').siblings('[data-target]').removeClass('is-active');
+	});
+	$('[data-target] .modal--close, .fade-bg').on('click', function(e) {
+		e.preventDefault();
+		$('[data-target], .fade-bg').removeClass('is-opened');
+		$('[data-open]').removeClass('is-active');
 	});
 });

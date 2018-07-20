@@ -21,7 +21,25 @@
 				</div>
 				<a href="tel:+73433110211" class="header--phone">+7 (343) 311-02-11</a>
 				<span class="header--shop"><span>Выбрать магазин</span></span>
-				<span class="header--favorite"></span>
+				<div class="shop-drop">
+					<span class="shop-drop--close"></span>
+					<span class="shop-drop--title">Ваш город</span>
+					<select>
+						<option>Каменск-Уральский</option>
+						<option>Екатеринбург</option>
+						<option>Кемерово</option>
+						<option>Новосибирск</option>
+					</select>
+					<span class="shop-drop--title">Выберите магазин</span>
+					<ul class="shop-drop__list">
+						<li><a href="#">ул. 8 марта, 185/5, 2 этаж</a></li>
+						<li><a href="#">пр. Космонавтов, 86, (ТК «Белка-маркет», 4 этаж)</a></li>
+					</ul>
+				</div>
+				<a href="#" class="header--favorite" data-count="0">
+					<i class="header--favorite_counter"></i>
+					<i class="header--favorite_tip">Нет избранных товаров</i>
+				</a>
 				<span class="header--login"><span>Вход</span></span>
 				<button class="header--catalog">Показать каталог</button>
 				<div class="nav">
@@ -178,11 +196,31 @@
 						<li><i class="product-b__special_icon product-b__special_icon-new"></i>Новинка! Товар в продаже с 1 мая 2018 года</li>
 						<li><i class="product-b__special_icon product-b__special_icon-sale"></i>Акция проходит в срок с 1 по 30 июня 2018 года</li>
 					</ul>
+					<div class="product-b-social">
+						<div class="product-b-social__item">
+							<a href="#" class="product-b-social--link icon-social_facebook"></a>
+						</div>
+						<div class="product-b-social__item">
+							<a href="#" class="product-b-social--link icon-social_vkontakte"></a>
+						</div>
+						<div class="product-b-social__item">
+							<a href="#" class="product-b-social--link icon-social_odnoklassniki"></a>
+						</div>
+						<div class="product-b-social__item">
+							<a href="#" class="product-b-social--link icon-social_email"></a>
+						</div>
+						<div class="product-b-social__item">
+							<a href="#" class="product-b-social--link icon-social_share"></a>
+						</div>
+						<div class="product-b-social__item">
+							<a href="#" class="product-b-social--link icon-social_print"></a>
+						</div>
+					</div>
 					<div class="product-b-group">
 						<div class="product-b-group__lc">
 							<div class="product-b__price">
 								<span class="product-b__price--title">Цена <span class="old">19 900р.</span></span>
-								<p>указана цена со скидкой 5%<br> по дисконтной карте<br> <a href="#">узнай как получить карту</a></p>
+								<p>указана цена со скидкой 5%<br> по дисконтной карте<br> <a href="#" data-open="get-discount">узнай как получить карту</a></p>
 							</div>
 							<div class="product-b__price">
 								<span class="product-b__price--title">Цена по акции <span class="new">17 040р.</span></span>
@@ -192,12 +230,15 @@
 						<div class="product-b-group__rc">
 							<div class="catalog-b-icons">
 								<div class="catalog-b-icons__item">
+									<span class="catalog-b-icons--tip">Бесплатная доставка транспортной компанией до подъезда</span>
 									<img src="./img/icon-catalog-1.png" width="40" height="39" alt="">
 								</div>
 								<div class="catalog-b-icons__item">
+									<span class="catalog-b-icons--tip">Бесплатный монтаж</span>
 									<img src="./img/icon-catalog-2.png" width="40" height="39" alt="">
 								</div>
 								<div class="catalog-b-icons__item">
+									<span class="catalog-b-icons--tip">Самые низкие цены</span>
 									<img src="./img/icon-catalog-3.png" width="40" height="39" alt="">
 								</div>
 							</div>
@@ -856,6 +897,13 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="fade-bg"></div>
+	<div class="modal modal_text" data-target="get-discount">
+		<span class="modal--close"></span>
+		<span class="modal_text--title">Как получить дисконтную карту</span>
+		<p>С другой стороны сложившаяся структура организации играет важную роль в формировании форм развития. С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности способствует подготовки и реализации форм развития. Задача организации, в особенности же консультация с широким активом играет важную роль в формировании дальнейших направлений развития. С другой стороны постоянный количественный рост и сфера нашей активности играет важную роль в формировании существенных финансовых и административных условий.</p>
+		<p>Равным образом рамки и место обучения кадров в значительной степени обуславливает создание существенных финансовых и административных условий. Таким образом постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения соответствующий условий активизации. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности позволяет оценить значение модели развития. Равным образом дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки позиций, занимаемых участниками в отношении поставленных задач. Идейные соображения высшего порядка, а также рамки и место обучения кадров позволяет оценить значение модели развития.</p>
 	</div>
 	<script src="./js/libs.js"></script>
 	<script src="./js/scripts.js"></script>
