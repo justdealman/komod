@@ -133,6 +133,16 @@ $(function() {
 	$('.item-product-preview').on('click', function() {
 		$('.product-b__slider').slick('slickGoTo',parseInt($(this).attr('data')-1));
 	});
+	function productMinInfo() {
+		if ( !isMobile ) {
+			var min = $('.product-b__slider').outerHeight()-$('.product-b-group').outerHeight();
+		} else {
+			var min = 0;
+		}
+		$('.product-b__min').css({
+			'min-height': min
+		});
+	}
 	function startApp() {
 		detectDevice();
 		if ( justSwitched ) {
@@ -152,6 +162,9 @@ $(function() {
 		setTimeout(function() {
 			setWatchedSlider();
 		}, 100);
+		if ( $('.product-b').length ) {
+			productMinInfo();
+		}
 	}
 	startApp();
 	var lastWidth = $(window).width();

@@ -598,7 +598,7 @@ button::-moz-focus-inner {
 }
 .catalog-b__content {
 	position:relative;
-	padding:12px 20px 112px 25px;
+	padding:12px 20px 157px 25px;
 }
 .catalog-b--title {
 	display:block;
@@ -624,6 +624,7 @@ button::-moz-focus-inner {
 .catalog-b__price {
 	max-width:235px;
 	font-size:0;
+	white-space:nowrap;
 	margin:0 auto 15px;
 }
 .catalog-b__price--original {
@@ -645,6 +646,13 @@ button::-moz-focus-inner {
 	line-height:30px;
 	font-weight:bold;
 	letter-spacing:1px;
+}
+.catalog-b__controls {
+	position:absolute;
+	left:0;
+	bottom:0;
+	width:100%;
+	height:157px;
 }
 .catalog-b--favorite {
 	position:absolute;
