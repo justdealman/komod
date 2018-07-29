@@ -194,23 +194,28 @@ button::-moz-focus-inner {
 }
 .header__row {
 	position:relative;
+	display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:justify;
+    -ms-flex-pack:justify;
+    justify-content:space-between;
 	max-width:1240px;
 	height:150px;
 	margin:0 auto;
 }
 .header--logo {
-	float:left;
-	display:block;
+	display:inline-block;
 	width:260px;
 	height:80px;
-	margin-right:5%;
 	background:url('../img/logo.png') no-repeat 30px 21px;
+	background-size:calc(100% - 60px) auto;
 }
 .header__search {
 	position:relative;
-	float:left;
+	display:inline-block;
 	width:22.2%;
-	margin:32px 0 0;
+	margin:32px 10px 0 -10px;
 }
 .header__search input[type="text"] {
 	width:100%;
@@ -231,25 +236,27 @@ button::-moz-focus-inner {
 	background:url('../img/search-icon.png') no-repeat 6px 4px;
 }
 .header--phone {
-	float:right;
+	display:inline-block;
 	color:#241f22;
 	font-size:16px;
 	line-height:20px;
 	font-family:'Museo Sans', sans-serif;
 	font-weight:900;
+	white-space:nowrap;
 	padding:10px;
-	margin:31px 20px 0 1.7%;
+	margin:31px 20px 0 0
 }
 .header--shop {
-	float:right;
+	display:inline-block;
 	color:#3d697a;
 	font-size:12px;
 	line-height:16px;
 	font-family:'Museo Sans', sans-serif;
 	font-weight:300;
+	white-space:nowrap;
 	cursor:pointer;
 	padding:10px;
-	margin:26px 0 0 2.9%;
+	margin:26px 0 0;
 }
 .header--shop:before {
 	content:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAPCAYAAADtc08vAAABF0lEQVQ4T52S0U3DMBCG74L6TDcgbFAmwH5OKjFCacp7R+gIvENJmIBKTcSj3Q06QrsBC+DjziJSg+MS1VLk6Oz7fP/dj+vaHgDghj9ZhyJXt7//gzY8vSWwBOnhMdP7Qdl8qQN4a8yzJM4zvbwIUDZm4ggrljG5CCBJLOOLt+uBgGNHggdsd9aBWz1NtT0HWTdmRgQqAEgf+ICnoX0/Yuu1NhUi2LCC2iz5IP2vkX5iVxRW8LI1KoFkVUzvVez18tOk7hstNzsNKig/zNiNUAw1jgFa/YtczwJAOwk2lIoZivVvWOamyHTVC/AyECuGtRbvFENA7/K6BHsBAz3gr0UB3OU9AdAiV3ctsC92FiCJp7YWwN/YD3fEclaKG8AMAAAAAElFTkSuQmCC');
@@ -273,12 +280,12 @@ button::-moz-focus-inner {
 }
 .header--favorite {
 	position:relative;
-	float:right;
-	display:block;
+	z-index:5;
+	display:inline-block;
 	width:39px;
 	height:36px;
 	cursor:pointer;
-	margin:27px 0 0 2.3%;
+	margin:27px 0 0;
 }
 .header--favorite_counter {
 	position:absolute;
@@ -349,15 +356,16 @@ button::-moz-focus-inner {
 	background-size:100% 100%;
 }
 .header--login {
-	float:right;
+	display:inline-block;
 	color:#3d697a;
 	font-size:12px;
 	line-height:16px;
 	font-family:'Museo Sans', sans-serif;
 	font-weight:300;
+	white-space:nowrap;
 	cursor:pointer;
 	padding:10px;
-	margin:26px 0 0 0;
+	margin:26px 0 0;
 }
 .header--login:before {
 	content:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAARCAYAAADpPU2iAAABcUlEQVQ4T31SQVLCQBCc2ZRn9QfxBcoLyB4toMQfJAWeyQ8MP4hnpcgPpAoojwsvEF9AfqCeKXac3WRxC4N72trtnpnuHgTvPM9VJASOgKBvnxFmWtPTQ0+uHAzdZbJUMRDmAJQJBAvQBBGzMkBKBx1ZVDX4TN9UqPe4FUitpCM3ftfpUt1owncR0FVyK0tLeFkoyx52ZeyD3d3/t4TJfL0i0PmwJ2eNhLnqI4h00GtHFWGxKjVR7Iv7YwZiMehG4aEDCF04YcddJguVAon+bwd2iAhHw27UahqJJ9iwU7kpWLn0qi70GW75OuO2iU8yghHwTuzYpXv5hbVtikHfNZDY7Vo8mQBdVudsu0SuYD/ZUpuuDVBDaMkCSqfL4ZDno6bAjrW4AC2B5z6sSJNo92awVYcdXRpB/4FrYz4NoWTLslMZHKpXy5kxgUMBfCSgNAhgbRbM72QWc7+HNltrNnlcr4YlxQy8PjHWB4N5NWT+A0f5vLVobXDnAAAAAElFTkSuQmCC');
@@ -377,11 +385,13 @@ button::-moz-focus-inner {
 }
 .shop-drop {
 	position:absolute;
-	right:30px;
+	right:50%;
 	top:75px;
-	z-index:10;
+	z-index:110;
 	width:415px;
 	padding:27px 40px 22px;
+	margin-top:44px;
+	margin-right:-590px;
 	background:#ffffff;
 	-webkit-border-radius:0 0 6px 6px;
 	border-radius:0 0 6px 6px;
@@ -1604,24 +1614,18 @@ button::-moz-focus-inner {
 	-webkit-border-radius:8px;
 	border-radius:8px;
 }
+@media all and (max-width:1239px) {
+	.shop-drop {
+		right:30px;
+		margin-right:0;
+	}
+}
 @media all and (max-width:1199px) {
 	.wrapper {
 		padding-top:89px;
 	}
 	.header__row {
 		height:140px;
-	}
-	.header--logo {
-		margin-right:0.4%;
-	}
-	.header--phone {
-		margin-left:1.6%;
-	}
-	.header--shop {
-		margin-left:1.2%;
-	}
-	.header--favorite {
-		margin-left:1.2%;
 	}
 	.nav {
 		top:99px;
@@ -1747,12 +1751,23 @@ button::-moz-focus-inner {
 		position:absolute;
 	}
 	.header__row {
+	    display:-webkit-box;
+		display:-ms-flexbox;
+		display:flex;
+		-webkit-box-pack:justify;
+        -ms-flex-pack:justify;
+        justify-content:space-between;
 		height:180px;
+		padding:106px 20px 0 0;
 	}
 	.header--logo {
+		position:absolute;
+		left:0;
+		top:0;
 		height:100px;
 		margin-right:15px;
 		background-position:30px 32px;
+		background-size:auto auto;
 	}
 	.header--phone {
 		position:absolute;
@@ -1764,19 +1779,20 @@ button::-moz-focus-inner {
 		left:275px;
 		top:13px;
 		width:calc(100% - 485px);
+		margin:32px 0 0;
 	}
 	.header--shop {
-		margin:106px 20px 0 22px;
+		margin:0;
 	}
 	.header--favorite {
-		margin:107px 0 0 29px;
+		margin:1px 0 0;
 	}
 	.header--favorite_tip {
 		padding:7px 11px 8px 10px;
 		margin:2px 0 0 -10px;
 	}
 	.header--login {
-		margin:106px 0 0 0;
+		margin:0;
 	}
 	.shop-drop {
 		top:150px;
@@ -1791,10 +1807,8 @@ button::-moz-focus-inner {
 		width:calc(50% - 20px);
 	}
 	.header--catalog {
-		position:absolute;
-		left:30px;
-		top:103px;
-		display:block;
+		display:inline-block;
+		height:46px;
 		width:350px;
 		color:#bd2727;
 		font-size:14px;
@@ -1802,6 +1816,7 @@ button::-moz-focus-inner {
 		font-family:'Museo Sans', sans-serif;
 		font-weight:300;
 		padding:13px 20px 12px;
+		margin:-3px 10px 0 30px;
 		background:transparent;
 		border:1px solid #bd2727;
 		-webkit-border-radius:4px;
@@ -1906,12 +1921,18 @@ button::-moz-focus-inner {
 		padding-top:250px;
 	}
 	.header__row {
+		overflow:hidden;
+		-ms-flex-wrap:wrap;
+		flex-wrap:wrap;
 		height:306px;
+		padding:157px 5px 85px;
 	}
 	.header--catalog {
+		position:absolute;
 		top:240px;
 		left:15px;
 		width:calc(100% - 30px);
+		margin:0;
 	}
 	.header--logo {
 		width:150px;
@@ -1928,23 +1949,32 @@ button::-moz-focus-inner {
 		margin:27px 5px 0 0;
 	}
 	.header--shop {
-		position:absolute;
-		top:51px;
-		right:0;
-		margin-right:5px;
+		height:39px;
 		white-space:nowrap;
+		margin:0 0 -10px;
 	}
 	.header--login {
-		position:absolute;
-		left:5px;
-		top:51px;
+		height:41px;
+		margin:0 0 -10px;
 	}
 	.header--favorite {
-		position:absolute;
-		left:80px;
-		top:51px;
+		height:36px;
+		margin:0 0 -10px;
+	}
+	.header--favorite_tip {
+		left:auto;
+		right:0;
+		top:40px;
+		margin:0;
+	}
+	.header--favorite_tip:before {
+		left:auto;
+		right:16px;
+		top:-4px;
+		transform:rotate(90deg);
 	}
 	.shop-drop {
+		z-index:110;
 		top:201px;
 		right:15px;
 		width:calc(100% - 30px);

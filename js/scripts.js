@@ -148,6 +148,7 @@ $(function() {
 			$('.footer__contacts').detach().insertAfter($('.footer__nav_3'));
 		}
 		setRatio();
+		moveCityDrop();
 		setTimeout(function() {
 			setWatchedSlider();
 		}, 100);
@@ -189,8 +190,17 @@ $(function() {
 		nativeOnMobile: true
 	});
 	function openCityDrop() {
+		var posTop = $('.header--shop').offset().top;
 		$('.header--shop').addClass('is-active');
-		$('.shop-drop').addClass('is-opened');
+		$('.shop-drop').addClass('is-opened').css({
+			'top': posTop
+		});
+	}
+	function moveCityDrop() {
+		var posTop = $('.header--shop').offset().top;
+		$('.shop-drop').css({
+			'top': posTop
+		});
 	}
 	function closeCityDrop() {
 		$('.header--shop').removeClass('is-active');
