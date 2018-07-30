@@ -384,7 +384,7 @@ button::-moz-focus-inner {
 	border-bottom:1px dashed #3d697a;
 }
 .shop-drop {
-	position:absolute;
+	position:fixed;
 	right:50%;
 	top:75px;
 	z-index:110;
@@ -1803,6 +1803,7 @@ button::-moz-focus-inner {
 		margin:0;
 	}
 	.shop-drop {
+		position:absolute;
 		top:150px;
 	}
 	.nav {
@@ -1982,7 +1983,6 @@ button::-moz-focus-inner {
 		transform:rotate(90deg);
 	}
 	.shop-drop {
-		z-index:110;
 		top:201px;
 		right:15px;
 		width:calc(100% - 30px);
