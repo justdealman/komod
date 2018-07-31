@@ -203,14 +203,14 @@ $(function() {
 		nativeOnMobile: true
 	});
 	function openCityDrop() {
-		var posTop = $('.header--shop').offset().top;
+		var posTop = $('.header--shop span').position().top;
 		$('.header--shop').addClass('is-active');
 		$('.shop-drop').addClass('is-opened').css({
 			'top': posTop
 		});
 	}
 	function moveCityDrop() {
-		var posTop = $('.header--shop').offset().top;
+		var posTop = $('.header--shop span').position().top;
 		$('.shop-drop').css({
 			'top': posTop
 		});
