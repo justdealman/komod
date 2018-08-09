@@ -143,19 +143,32 @@ $(function() {
 			'min-height': min
 		});
 	}
+	function categoriesOrder() {
+		if ( Modernizr.mq('(max-width:1199px)') && Modernizr.mq('(min-width:1000px)') ) {
+			$('.categories-b [data="4"]').detach().appendTo($('.categories-b [data="3"] .categories-b__grid'));
+		} else {
+			$('.categories-b [data="4"]').detach().insertAfter($('.categories-b [data="3"]'));
+		}
+	}
 	function startApp() {
 		detectDevice();
 		if ( justSwitched ) {
 			if ( isMobile ) {
-
+				$('body').prepend('<span class="menu-open"><i></i></span>');
 			} else {
-
+				if ( $('.menu-open').hasClass('is-active') ) {
+					closeNav();
+				}
+				$('.menu-open').remove();
 			}
 		}
 		if ( Modernizr.mq('(max-width:1199px)') && Modernizr.mq('(min-width:1000px)') ) {
 			$('.footer__contacts').detach().appendTo($('.footer__nav_3'));
 		} else {
 			$('.footer__contacts').detach().insertAfter($('.footer__nav_3'));
+		}
+		if ( $('.categories-b').length ) {
+			categoriesOrder();
 		}
 		setRatio();
 		moveCityDrop();
@@ -276,5 +289,53 @@ $(function() {
 		e.preventDefault();
 		$('[data-target], .fade-bg').removeClass('is-opened');
 		$('[data-open]').removeClass('is-active');
+	});
+
+	function openNav() {
+		mobileNavReset();
+		$('.nav-m, .fade-bg').addClass('is-opened');
+		$('body').addClass('is-locked');
+	}
+	function closeNav() {
+		$('.nav-m, .fade-bg').removeClass('is-opened');
+		$('body').removeClass('is-locked');
+	}
+	$(document).on('click', '.menu-open', function() {
+		if ( !$(this).hasClass('is-active') ) {
+			openNav();
+			$(this).addClass('is-active');
+		} else {
+			closeNav();
+			$(this).removeClass('is-active');
+		}
+	});
+
+	function mobileNavDrop(t) {
+		if ( !t.hasClass('is-active') ) {
+			t.addClass('is-active');
+			var next = t.next('.nav-m__sub');
+			t.siblings('.nav-m--link').addClass('is-hidden');
+			t.parent('.nav-m__sub').siblings().addClass('is-hidden');
+		} else {
+			t.removeClass('is-active');
+			t.siblings().removeClass('is-hidden');
+			t.parent('.nav-m__sub').siblings('.nav-m--link.is-active').removeClass('is-hidden');
+		}
+	}
+	function mobileNavReset() {
+		$('.nav-m__group .nav-m--link').removeClass('is-active is-hidden');
+		$('.nav-m--city').removeClass('is-active');
+	}
+	$('.nav-m--link.has-sub').on('click', function(e) {
+		e.preventDefault();
+		mobileNavDrop($(this));
+	});
+	$('.nav-m--city').on('click', function(e) {
+		e.preventDefault();
+		if ( !$(this).hasClass('is-active') ) {
+			$(this).addClass('is-active');
+		} else {
+			$(this).removeClass('is-active');
+		}
 	});
 });
